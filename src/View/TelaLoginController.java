@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controle.EmpresaControl;
 import Controle.FuncionarioControl;
 import Util.Validadores;
 import com.jfoenix.controls.*;
@@ -67,12 +68,21 @@ public class TelaLoginController implements Initializable {
         try{
             if(new FuncionarioControl().verificausuario(login,senha)){
                 ((Stage)((Button)event.getSource()).getScene().getWindow()).close();
-                Stage stage = new Stage();
-                Parent root = FXMLLoader.load(getClass().getResource("/View/MenuPrincipal.fxml"));
-                Scene scene = new Scene(root);
-                stage.setScene(scene);
-                stage.setTitle("Tela Menu");
-                stage.showAndWait();
+                if(new EmpresaControl().verificaempresa()){
+                    Stage stage = new Stage();
+                    Parent root = FXMLLoader.load(getClass().getResource("/View/MenuPrincipal.fxml"));
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.setTitle("Tela Menu");
+                    stage.showAndWait();
+                }else{
+                    Stage stage = new Stage();
+                    Parent root = FXMLLoader.load(getClass().getResource("/View/CadastroEmpresa.fxml"));
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.setTitle("Cadastra Empresa");
+                    stage.showAndWait();
+                }
                 
             }
         }catch(Exception ex){
