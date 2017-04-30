@@ -4,6 +4,7 @@ import DAO.EmpresaDAO;
 import DAO.FuncionarioDAO;
 import Exception.DAOException;
 import Exception.EntidadeException;
+import java.sql.Blob;
 import java.sql.Connection;
 
 /**
@@ -18,6 +19,9 @@ public class Empresa {
     private String email;
     private String site;
     private String endereco;
+    private String cnpj;
+    private String ie;
+    private Blob logo;
 
     public Empresa() {
     }
