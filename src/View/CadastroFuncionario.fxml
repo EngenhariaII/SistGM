@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="579.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.CadastroFuncionarioController">
+   <bottom>
+      <HBox prefHeight="55.0" prefWidth="579.0" style="-fx-border-color: #eb8427; -fx-border-width: 4;" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="btNovo" onAction="#clkNovo" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #fff; -fx-border-color: #eb8427;" text="Novo">
+               <HBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="btCancelar" onAction="#clkCancelar" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #fff; -fx-border-color: #eb8427;" text="Cancelar">
+               <HBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="btGravar" onAction="#clkGravar" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #fff; -fx-border-color: #eb8427;" text="Gravar">
+               <HBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="btLocalizar" onAction="#clkLocalizar" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #fff; -fx-border-color: #eb8427;" text="Localizar">
+               <HBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="btExcluir" onAction="#clkExcluir" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #fff; -fx-border-color: #eb8427;" text="Excluir">
+               <HBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="btSair" onAction="#clkSair" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #fff; -fx-border-color: #eb8427;" text="Sair">
+               <HBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <Pane prefHeight="425.0" prefWidth="579.0" style="-fx-border-color: #eb8427; -fx-border-width: 2;" BorderPane.alignment="CENTER">
+         <children>
+            <JFXTextField fx:id="txtCodigo" focusColor="#eb8427" layoutX="59.0" layoutY="51.0" prefHeight="25.0" prefWidth="81.0" promptText="Código:" />
+            <JFXTextField fx:id="txtNome" focusColor="#eb8427" layoutX="59.0" layoutY="81.0" prefHeight="25.0" prefWidth="328.0" promptText="Nome:" />
+            <JFXTextField fx:id="txtEndereco" focusColor="#eb8427" layoutX="59.0" layoutY="111.0" prefHeight="25.0" prefWidth="312.0" promptText="Endereço:" />
+            <JFXTextField fx:id="txtTelefone" focusColor="#eb8427" layoutX="59.0" layoutY="141.0" prefHeight="25.0" prefWidth="144.0" promptText="Telefone:" />
+            <JFXTextField fx:id="txtCelular" focusColor="#eb8427" layoutX="335.0" layoutY="141.0" prefHeight="25.0" prefWidth="144.0" promptText="Celular:" />
+            <JFXTextField fx:id="txtCPF" focusColor="#eb8427" layoutX="59.0" layoutY="171.0" prefHeight="25.0" prefWidth="169.0" promptText="CPF:" />
+            <JFXTextField fx:id="txtLogin" focusColor="#eb8427" layoutX="59.0" layoutY="231.0" prefHeight="25.0" prefWidth="175.0" promptText="Login:" />
+            <JFXPasswordField fx:id="txtSenha" focusColor="#eb8427" layoutX="335.0" layoutY="231.0" prefHeight="25.0" prefWidth="164.0" promptText="Senha:" />
+            <JFXDatePicker fx:id="dpDtadmi" defaultColor="#eb8427" layoutX="59.0" layoutY="201.0" prefHeight="28.0" prefWidth="133.0" promptText="Dt Admissão:" />
+            <JFXDatePicker fx:id="dpDtdemi" defaultColor="#eb8427" layoutX="335.0" layoutY="201.0" prefHeight="28.0" prefWidth="133.0" promptText="Dt Demissão:" />
+            <JFXComboBox fx:id="cbNivel" focusColor="#eb8427" layoutX="59.0" layoutY="271.0" prefHeight="25.0" prefWidth="204.0" promptText="Selecione um Nivel:" />
+         </children>
+      </Pane>
+   </center>
+   <top>
+      <HBox alignment="CENTER" prefHeight="56.0" prefWidth="579.0" style="-fx-border-color: #eb8427; -fx-border-width: 4;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Grassi Modas" textFill="#eb8427">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

@@ -22,17 +22,17 @@ import java.util.List;
  */
 public class FuncionarioDAO {
     
-    private String select = "SELECT * FROM funcionario ";
+    private String select = "SELECT * FROM funcionarios ";
     private String insert = "INSERT INTO funcionario(fun_nome, fun_endereco, fun_telefone, fun_celular," +
                             "fun_dtadmis, fun_dtdemis, fun_login, fun_senha, fun_cpf, niv_codigo)" +
                             " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
     
-    private String update = "UPDATE funcionario SET fun_nome = ?, fun_endereco = ?, fun_telefone = ?, fun_celular = ?," +
+    private String update = "UPDATE funcionarios SET fun_nome = ?, fun_endereco = ?, fun_telefone = ?, fun_celular = ?," +
                             " fun_dtadmis = ?, fun_dtdemis = ?, fun_login = ?, fun_senha = ?, fun_cpf = ?," +
                             " niv_codigo = ?" +
                             " WHERE fun_codigo = ?";
     
-    private String delete = "DELETE FROM funcionario WHERE fun_codigo = ?";
+    private String delete = "DELETE FROM funcionarios WHERE fun_codigo = ?";
     
      public Funcionario select(Funcionario obj, Connection con) throws DAOException, EntidadeException {
         if (con != null) {
@@ -96,7 +96,7 @@ public class FuncionarioDAO {
                     f.setSenha(rs.getString("fun_senha"));
                     
                     Nivel n = new Nivel();
-                    n.setCodigo(rs.getInt("niv_codigo"));
+                    n.setCodigo(rs.getInt("nivel_niv_codigo"));
                     f.setNivel(n.select(con));
                     return f;
                 } 
@@ -251,7 +251,7 @@ public class FuncionarioDAO {
                     f.setSenha(rs.getString("fun_senha"));
                     
                     Nivel n = new Nivel();
-                    n.setCodigo(rs.getInt("niv_codigo"));
+                    n.setCodigo(rs.getInt("nivel_niv_codigo"));
                     f.setNivel(n.select(con));
                     lista.add(f);
                 } 
