@@ -77,7 +77,7 @@ public class TelaLoginController implements Initializable {
                     stage.showAndWait();
                 }else{
                     Stage stage = new Stage();
-                    Parent root = FXMLLoader.load(getClass().getResource("/View/CadastroEmpresa.fxml"));
+                    Parent root = FXMLLoader.load(getClass().getResource("/View/CadastroFuncionario.fxml"));
                     Scene scene = new Scene(root);
                     stage.setScene(scene);
                     stage.setTitle("Cadastra Empresa");
