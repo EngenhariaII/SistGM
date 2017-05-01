@@ -5,6 +5,8 @@
  */
 package View;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -25,8 +27,6 @@ public class CadastroFornecedoresController implements Initializable {
     @FXML
     private Button btGravar;
     @FXML
-    private Button btLimpar;
-    @FXML
     private Button btExcluir;
     @FXML
     private Button btCancelar;
@@ -39,9 +39,15 @@ public class CadastroFornecedoresController implements Initializable {
     @FXML
     private TextField txtCelular;
     @FXML
-    private TextField txtLogin;
-    @FXML
     private TextField txtCodigo;
+    @FXML
+    private JFXButton btLocalizar;
+    @FXML
+    private JFXButton btSair;
+    @FXML
+    private JFXTextField txtEmail;
+    @FXML
+    private JFXTextField txtSite;
 
     /**
      * Initializes the controller class.
@@ -59,9 +65,6 @@ public class CadastroFornecedoresController implements Initializable {
     private void clkGravar(ActionEvent event) {
     }
 
-    @FXML
-    private void clkLimpar(ActionEvent event) {
-    }
 
     @FXML
     private void clkExcluir(ActionEvent event) {
@@ -69,6 +72,14 @@ public class CadastroFornecedoresController implements Initializable {
 
     @FXML
     private void clkCancelar(ActionEvent event) {
+    }
+
+    @FXML
+    private void clkLocalizar(ActionEvent event) {
+    }
+
+    @FXML
+    private void clkSair(ActionEvent event) {
     }
     
 }

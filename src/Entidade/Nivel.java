@@ -9,6 +9,8 @@ import DAO.NivelDAO;
 import Exception.DAOException;
 import Exception.EntidadeException;
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -36,11 +38,28 @@ public class Nivel {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    @Override
+    public String toString() {
+        return codigo + " - " + nome;
+    }
+    
+    
     
     public Nivel select(Connection con) throws EntidadeException{
         try{
             Nivel n = new NivelDAO().select(this, con);
             return n;
+        }catch(DAOException ex){
+            throw new EntidadeException(ex.getMessage());
+        }
+    }
+    
+    public List<Nivel> lista(Connection con) throws EntidadeException{
+        try{
+            List<Nivel> lista = new ArrayList<>();
+            lista = new NivelDAO().lista(con);
+            return lista;
         }catch(DAOException ex){
             throw new EntidadeException(ex.getMessage());
         }
