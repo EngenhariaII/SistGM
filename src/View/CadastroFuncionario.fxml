@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="579.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.CadastroFuncionarioController">
    <bottom>
       <HBox prefHeight="55.0" prefWidth="579.0" style="-fx-border-color: #eb8427; -fx-border-width: 4;" BorderPane.alignment="CENTER">
