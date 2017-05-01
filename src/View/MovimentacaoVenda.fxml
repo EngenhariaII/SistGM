@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="752.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MovimentacaoVendaController">
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="72.0" prefWidth="752.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btNovo" mnemonicParsing="false" onAction="#clkNovo" prefWidth="100.0" style="-fx-background-color: #efefef; -fx-border-color: #ccc;" text="Novo" />
+            <Button fx:id="btGravar" mnemonicParsing="false" onAction="#clkGravar" prefWidth="100.0" style="-fx-background-color: #efefef; -fx-border-color: #ccc;" text="Gravar">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btLimpar" mnemonicParsing="false" onAction="#clkLimpar" prefWidth="100.0" style="-fx-background-color: #efefef; -fx-border-color: #ccc;" text="Limpar">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btExcluir" mnemonicParsing="false" onAction="#clkExcluir" prefWidth="100.0" style="-fx-background-color: #efefef; -fx-border-color: #ccc;" text="Excluir">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btCancelar" mnemonicParsing="false" onAction="#clkCancelar" prefWidth="100.0" style="-fx-background-color: #efefef; -fx-border-color: #ccc;" text="Cancelar">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <HBox alignment="CENTER" prefHeight="70.0" prefWidth="752.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="#eb8427" strokeType="OUTSIDE" strokeWidth="0.0" text="Gerenciar Vendas">
+               <font>
+                  <Font name="Tahoma" size="47.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <Pane prefHeight="474.0" prefWidth="752.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="7.0" layoutY="101.0" prefHeight="333.0" prefWidth="736.0" style="-fx-border-color: lightgray;">
+               <children>
+                  <TabPane layoutX="6.0" layoutY="14.0" prefHeight="235.0" prefWidth="726.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab fx:id="tabItensVenda" text="Itens da Venda">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Itens da Venda">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="14.0" layoutY="43.0" text="Código do Item:" />
+                                    <Label layoutX="120.0" layoutY="43.0" text="Código do Produto:" />
+                                    <Label layoutX="529.0" layoutY="43.0" text="Quantidade:" />
+                                    <TextField fx:id="txtCodItem" editable="false" layoutX="14.0" layoutY="65.0" prefHeight="25.0" prefWidth="75.0" />
+                                    <TextField fx:id="txtCodProduto" editable="false" layoutX="120.0" layoutY="65.0" prefHeight="25.0" prefWidth="75.0" />
+                                    <TextField fx:id="txtQtde" layoutX="530.0" layoutY="65.0" prefHeight="25.0" prefWidth="62.0" />
+                                    <Label layoutX="608.0" layoutY="43.0" text="Valor:" />
+                                    <TextField fx:id="txtValor" alignment="CENTER_RIGHT" layoutX="608.0" layoutY="65.0" prefHeight="25.0" prefWidth="105.0" promptText="R$ 0,00">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </TextField>
+                                    <Button fx:id="btBuscaProduto" layoutX="202.0" layoutY="65.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-image: url(&quot;icones/search.png&quot;); -fx-background-position: center center; -fx-background-repeat: no-repeat;" />
+                                    <TableView fx:id="tvItensVenda" layoutX="8.0" layoutY="93.0" prefHeight="106.0" prefWidth="706.0">
+                                       <columns>
+                                          <TableColumn fx:id="colItem" prefWidth="141.0" text="Código do Item" />
+                                          <TableColumn fx:id="colVenda" prefWidth="141.0" text="Código da Venda" />
+                                          <TableColumn fx:id="colProduto" prefWidth="141.0" text="Código do Produto" />
+                                          <TableColumn fx:id="colQtde" prefWidth="141.0" text="Quantidade" />
+                                          <TableColumn fx:id="colValor" prefWidth="141.0" text="Valor Total" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab fx:id="tabParcelas" text="Parcelas">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Parcelas">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView fx:id="tvParcelas" layoutX="8.0" layoutY="36.0" prefHeight="106.0" prefWidth="706.0">
+                                       <columns>
+                                          <TableColumn fx:id="colNumParcelas" prefWidth="141.0" text="Número da Parcela" />
+                                          <TableColumn fx:id="colValorParcela" prefWidth="141.0" text="Valor" />
+                                          <TableColumn fx:id="colValorPago" prefWidth="141.0" text="Valor Pago" />
+                                          <TableColumn fx:id="colDtPagto" prefWidth="141.0" text="Data de Pagamento" />
+                                          <TableColumn fx:id="colDtVenc" prefWidth="141.0" text="Data de Vencimento" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+                  <HBox alignment="CENTER" layoutX="14.0" layoutY="275.0" prefHeight="52.0" prefWidth="710.0" style="-fx-border-color: lightgray;">
+                     <children>
+                        <Button fx:id="btInserirVenda" mnemonicParsing="false" onAction="#clkInserirVenda" prefWidth="100.0" style="-fx-background-color: #efefef; -fx-border-color: #ccc;" text="Inserir" />
+                        <Button fx:id="btCancelarVenda" mnemonicParsing="false" onAction="#clkCancelarVenda" prefWidth="100.0" style="-fx-background-color: #efefef; -fx-border-color: #ccc;" text="Cancelar">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btNovoVenda" mnemonicParsing="false" onAction="#clkNovoVenda" prefWidth="100.0" style="-fx-background-color: #efefef; -fx-border-color: #ccc;" text="Novo">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btAlterarVenda" mnemonicParsing="false" onAction="#clkAlterarVenda" prefWidth="100.0" style="-fx-background-color: #efefef; -fx-border-color: #ccc;" text="Alterar">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btExcluirVenda" mnemonicParsing="false" onAction="#clkExcluirVenda" prefWidth="100.0" style="-fx-background-color: #efefef; -fx-border-color: #ccc;" text="Excluir">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label layoutX="14.0" layoutY="253.0" text="Ações do Itens">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label layoutX="160.0" layoutY="41.0" text="Funcionário:" />
+            <ComboBox fx:id="cbFuncionario" layoutX="158.0" layoutY="62.0" prefWidth="150.0" />
+            <Label layoutX="588.0" layoutY="448.0" text="TOTAL:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <TextField fx:id="txtTotal" alignment="CENTER_RIGHT" editable="false" layoutX="633.0" layoutY="444.0" prefHeight="25.0" prefWidth="105.0" promptText="R$ 0,00" style="-fx-background-color: yellow;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="32.0" layoutY="41.0" text="Código da Venda:" />
+            <TextField fx:id="txtCodVenda" editable="false" layoutX="32.0" layoutY="62.0" prefHeight="25.0" prefWidth="75.0" />
+            <Label layoutX="14.0" layoutY="14.0" text="Informações da Venda">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="btBuscaCliente" layoutX="432.0" layoutY="62.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-image: url(&quot;icones/search.png&quot;); -fx-background-position: center center; -fx-background-repeat: no-repeat;" />
+            <Label layoutX="350.0" layoutY="41.0" text="Código do Cliente:" />
+            <TextField fx:id="txtCodCliente" editable="false" layoutX="350.0" layoutY="62.0" prefHeight="25.0" prefWidth="75.0" />
+            <Label layoutX="601.0" layoutY="41.0" text="Data Emissão:" />
+            <DatePicker fx:id="dpDtEmissao" layoutX="601.0" layoutY="62.0" prefHeight="25.0" prefWidth="108.0" />
+         </children>
+      </Pane>
+   </left>
+</BorderPane>
