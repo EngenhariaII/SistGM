@@ -11,6 +11,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -61,5 +63,28 @@ public class NivelDAO {
         }else{
             throw new DAOException("Erro na conexão!");
         }
+    }
+    
+    public List<Nivel> lista(Connection con) throws DAOException{
+        List<Nivel> lista = new ArrayList<>();
+        if(con!=null){
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+            try{
+                ps = con.prepareStatement(select);
+                rs = ps.executeQuery();
+                while(rs.next()){
+                    Nivel n = new Nivel();
+                    n.setCodigo(rs.getInt("niv_codigo"));
+                    n.setNome(rs.getString("niv_nome"));
+                    lista.add(n);
+                }
+                return lista;
+            }catch(SQLException ex){
+                throw new DAOException(ex.getMessage());
+            }
+        }else{
+            throw new DAOException("Erro na conexão!");
+        } 
     }
 }
