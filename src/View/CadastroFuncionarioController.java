@@ -5,20 +5,13 @@
  */
 package View;
 
-import Controle.NivelControl;
-import Entidade.Nivel;
-import Exception.ControlException;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -63,7 +56,7 @@ public class CadastroFuncionarioController implements Initializable {
     @FXML
     private JFXDatePicker dpDtdemi;
     @FXML
-    private JFXComboBox<Nivel> cbNivel;
+    private JFXComboBox<?> cbNivel;
 
     /**
      * Initializes the controller class.
@@ -71,14 +64,10 @@ public class CadastroFuncionarioController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        estado(true); 
-        
     }    
 
     @FXML
-    private void clkNovo(ActionEvent event) throws ControlException {
-        estado(false);
-        carregacb();
+    private void clkNovo(ActionEvent event) {
     }
 
     @FXML
@@ -99,32 +88,6 @@ public class CadastroFuncionarioController implements Initializable {
 
     @FXML
     private void clkSair(ActionEvent event) {
-    }
-    
-    public void estado(boolean estado){
-        btCancelar.setDisable(estado);
-        btGravar.setDisable(estado);
-        btLocalizar.setDisable(estado);
-        btExcluir.setDisable(estado);
-        txtCPF.setDisable(estado);
-        txtCelular.setDisable(estado);
-        txtCodigo.setDisable(estado);
-        txtEndereco.setDisable(estado);
-        txtLogin.setDisable(estado);
-        txtNome.setDisable(estado);
-        txtSenha.setDisable(estado);
-        txtTelefone.setDisable(estado);
-        cbNivel.setDisable(estado);
-        dpDtadmi.setDisable(estado);
-        dpDtdemi.setDisable(estado);
-    }
-    
-    public void carregacb() throws ControlException{
-        NivelControl nc = new NivelControl();
-        List<Nivel> lista = new ArrayList<>();
-        lista = nc.listaniveis();
-        ObservableList<Nivel> colection = FXCollections.observableArrayList(lista);
-        cbNivel.getItems().addAll(colection);
     }
     
 }
